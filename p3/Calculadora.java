@@ -14,7 +14,7 @@ public class Calculadora {
         // Define que a janela não será redimensionável
         jframe.setResizable(false);
         // Define as dimensões (largura e altura) da janela
-        jframe.setSize(150, 220);
+        jframe.setSize(360, 430);
         // Define o título da janela
         jframe.setTitle("Calculadora");
         // Define que a janela será visível
