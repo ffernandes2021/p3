@@ -9,6 +9,8 @@ public class Calculadora {
         JFrame jframe = new JFrame();
         // Define que a janela ao ser fechada deve encerrar a aplicação
         jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // Define que a janela será aberta no centro da tela
+        jframe.setLocationRelativeTo(null);
         // Define que a janela não será redimensionável
         jframe.setResizable(false);
         // Define as dimensões (largura e altura) da janela
