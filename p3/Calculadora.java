@@ -8,19 +8,16 @@ public class Calculadora {
 
     public static void main(String[] args) {
 
-        JFrame jframe = new JFrame();
+        JFrame jframe = new JFrame();        
         jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jframe.setLocationRelativeTo(null);
         jframe.setResizable(false);
         jframe.setSize(360, 430);
         jframe.setTitle("Calculadora");
-        jframe.setVisible(true);
-        // Define o gerenciador FlowLayout para o Container da janela        
-        jframe.getContentPane().setLayout(new FlowLayout());
+        jframe.getContentPane().setLayout(new FlowLayout());   
+
+        JLabel lblVisor = new JLabel();        
         
-        // Cria o visor
-        JLabel lblVisor = new JLabel();
-        // Cria os botões
         JButton btn0 = new JButton("0");
         JButton btn1 = new JButton("1");
         JButton btn2 = new JButton("2");
@@ -36,11 +33,9 @@ public class Calculadora {
         JButton btnSoma = new JButton("+");
         JButton btnSubtracao = new JButton("-");
         JButton btnMultiplicacao = new JButton("x");
-        JButton btnDivisao = new JButton("÷");
-        // Adiciona o visor ao Container da janela
-        jframe.getContentPane().add(lblVisor);
-        // Adiciona os botões ao Container da janela 
-        // Veja que a sequência aqui é considerada para o desenho da GUI 
+        JButton btnDivisao = new JButton("÷");        
+        
+        jframe.getContentPane().add(lblVisor);         
         jframe.getContentPane().add(btn7);
         jframe.getContentPane().add(btn8);
         jframe.getContentPane().add(btn9);
@@ -57,6 +52,7 @@ public class Calculadora {
         jframe.getContentPane().add(btnPonto);
         jframe.getContentPane().add(btnIgualdade);
         jframe.getContentPane().add(btnSoma);
+        jframe.setVisible(true);
 
     }
 
