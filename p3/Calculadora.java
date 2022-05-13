@@ -16,7 +16,7 @@ public class Calculadora {
         jframe.setTitle("Calculadora");
         jframe.getContentPane().setLayout(new FlowLayout());   
 
-        JLabel lblVisor = new JLabel(".0");        
+        JLabel lblVisor = new JLabel();        
         
         JButton btn0 = new JButton("0");
         JButton btn1 = new JButton("1");
