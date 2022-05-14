@@ -18,23 +18,19 @@ public class Calculadora {
         jframe.setResizable(false);
         jframe.setSize(250, 250);
         jframe.setTitle("Calculadora");
-        
 
-        JPanel jpanel = new JPanel();
-       
-
+        // Define o Gerenciador de Layout como nulo, também chamado de AbsoluteLayout
         jframe.getContentPane().setLayout(null);   
-
+        // Cria o visor
         JLabel lblVisor = new JLabel();
         // Define posicionamento e dimensão usando a notação x, y, width, height
         lblVisor.setBounds(10, 10, 230, 50);
         // Define que será um elemento opaco (não transparente)
         lblVisor.setOpaque(true);
         // Define a cor de fundo usando a notação sRGB (range (0-255))
-        lblVisor.setBackground(new Color(255, 255, 255));   
+        lblVisor.setBackground(new Color(174, 198, 150));   
         
-        jpanel.add(lblVisor);
-        jpanel.setVisible(true);
+        
 
 
         /*
@@ -77,7 +73,7 @@ public class Calculadora {
         
         */
 
-        jframe.getContentPane().add(jpanel);         
+        jframe.getContentPane().add(lblVisor);         
         /*jframe.getContentPane().add(btn7);
         jframe.getContentPane().add(btn8);
         jframe.getContentPane().add(btn9);
