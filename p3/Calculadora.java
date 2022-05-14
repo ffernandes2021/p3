@@ -6,6 +6,7 @@ import java.awt.Insets;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class Calculadora {
 
@@ -17,17 +18,25 @@ public class Calculadora {
         jframe.setResizable(false);
         jframe.setSize(250, 250);
         jframe.setTitle("Calculadora");
-        jframe.setOpacity(true);
+        
+
+        JPanel jpanel = new JPanel();
+       
 
         jframe.getContentPane().setLayout(null);   
 
         JLabel lblVisor = new JLabel();
         // Define posicionamento e dimensão usando a notação x, y, width, height
         lblVisor.setBounds(10, 10, 230, 50);
-        // Define que será um elemento opaco 
-        // lblVisor.setOpaque(true);
+        // Define que será um elemento opaco (não transparente)
+        lblVisor.setOpaque(true);
         // Define a cor de fundo usando a notação sRGB (range (0-255))
-        lblVisor.setBackground(new Color(255, 0, 0));    
+        lblVisor.setBackground(new Color(255, 255, 255));   
+        
+        jpanel.add(lblVisor);
+        jpanel.setVisible(true);
+
+
         /*
         JButton btn0 = new JButton("0");
         JButton btn1 = new JButton("1");
@@ -68,7 +77,7 @@ public class Calculadora {
         
         */
 
-        jframe.getContentPane().add(lblVisor);         
+        jframe.getContentPane().add(jpanel);         
         /*jframe.getContentPane().add(btn7);
         jframe.getContentPane().add(btn8);
         jframe.getContentPane().add(btn9);
