@@ -16,10 +16,11 @@ public class Calculadora {
         jframe.setResizable(false);
         jframe.setSize(250, 250);
         jframe.setTitle("Calculadora");
-        jframe.getContentPane().setLayout(new FlowLayout());   
+        jframe.getContentPane().setLayout(null);   
 
-        // JLabel lblVisor = new JLabel();        
-        
+        JLabel lblVisor = new JLabel();
+        lblVisor.setBounds(10, 10, 230, 50);    
+        /*
         JButton btn0 = new JButton("0");
         JButton btn1 = new JButton("1");
         JButton btn2 = new JButton("2");
@@ -37,8 +38,10 @@ public class Calculadora {
         JButton btnMultiplicacao = new JButton("x");
         JButton btnDivisao = new JButton("÷"); 
         
-        btn0.setPreferredSize(new Dimension(50,50));
-        btn0.setMargin(new Insets(10,10,10,10));
+        
+
+
+        
         btn1.setPreferredSize(new Dimension(50,50));
         btn2.setPreferredSize(new Dimension(50,50));
         btn3.setPreferredSize(new Dimension(50,50));
@@ -55,10 +58,10 @@ public class Calculadora {
         btnMultiplicacao.setPreferredSize(new Dimension(50,50));
         btnDivisao.setPreferredSize(new Dimension(50,50));
         
-        
+        */
 
-        // jframe.getContentPane().add(lblVisor);         
-        jframe.getContentPane().add(btn7);
+        jframe.getContentPane().add(lblVisor);         
+        /*jframe.getContentPane().add(btn7);
         jframe.getContentPane().add(btn8);
         jframe.getContentPane().add(btn9);
         jframe.getContentPane().add(btnDivisao);
@@ -73,7 +76,7 @@ public class Calculadora {
         jframe.getContentPane().add(btn0);
         jframe.getContentPane().add(btnPonto);
         jframe.getContentPane().add(btnIgualdade);
-        jframe.getContentPane().add(btnSoma);
+        jframe.getContentPane().add(btnSoma);*/
         jframe.setVisible(true);
 
         
