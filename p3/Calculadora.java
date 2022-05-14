@@ -1,9 +1,9 @@
 
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
 public class Calculadora {
 
@@ -13,7 +13,7 @@ public class Calculadora {
         jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jframe.setLocationRelativeTo(null);
         jframe.setResizable(false);
-        jframe.setSize(143, 216);
+        jframe.setSize(250, 250);
         jframe.setTitle("Calculadora");
         jframe.getContentPane().setLayout(new FlowLayout());   
 
@@ -36,22 +36,22 @@ public class Calculadora {
         JButton btnMultiplicacao = new JButton("x");
         JButton btnDivisao = new JButton("÷"); 
         
-        btn0.setSize(50, 50);
-        btn1.setSize(50, 50);
-        btn2.setSize(50, 50);
-        btn3.setSize(50, 50);
-        btn4.setSize(50, 50);
-        btn5.setSize(50, 50);
-        btn6.setSize(50, 50);
-        btn7.setSize(50, 50);
-        btn8.setSize(50, 50);
-        btn9.setSize(50, 50);
-        btnPonto.setSize(50, 50);
-        btnIgualdade.setSize(50, 50);
-        btnSoma.setSize(50, 50);
-        btnSubtracao.setSize(50, 50);
-        btnMultiplicacao.setSize(50, 50);
-        btnDivisao.setSize(50, 50);
+        btn0.setPreferredSize(new Dimension(50,50));
+        btn1.setPreferredSize(new Dimension(50,50));
+        btn2.setPreferredSize(new Dimension(50,50));
+        btn3.setPreferredSize(new Dimension(50,50));
+        btn4.setPreferredSize(new Dimension(50,50));
+        btn5.setPreferredSize(new Dimension(50,50));
+        btn6.setPreferredSize(new Dimension(50,50));
+        btn7.setPreferredSize(new Dimension(50,50));
+        btn8.setPreferredSize(new Dimension(50,50));
+        btn9.setPreferredSize(new Dimension(50,50));
+        btnPonto.setPreferredSize(new Dimension(50,50));
+        btnIgualdade.setPreferredSize(new Dimension(50,50));
+        btnSoma.setPreferredSize(new Dimension(50,50));
+        btnSubtracao.setPreferredSize(new Dimension(50,50));
+        btnMultiplicacao.setPreferredSize(new Dimension(50,50));
+        btnDivisao.setPreferredSize(new Dimension(50,50));
         
         
 
@@ -73,6 +73,8 @@ public class Calculadora {
         jframe.getContentPane().add(btnIgualdade);
         jframe.getContentPane().add(btnSoma);
         jframe.setVisible(true);
+
+        
 
         
 
