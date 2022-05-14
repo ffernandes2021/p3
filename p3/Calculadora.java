@@ -44,9 +44,9 @@ public class Calculadora {
         JButton btn6 = new JButton("6");
         btn6.setBounds(130, 130, 50, 50);
         JButton btnMultiplicacao = new JButton("x");
-        btnMultiplicacao.setBounds(190, Y, 50, 50);
+        btnMultiplicacao.setBounds(190, 130, 50, 50);
         JButton btn1 = new JButton("1");
-        btn1.setBounds(10, 130, 50, 50);
+        btn1.setBounds(10, 190, 50, 50);
         JButton btn2 = new JButton("2");
         btn2.setBounds(70, 190, 50, 50);
         JButton btn3 = new JButton("3");
