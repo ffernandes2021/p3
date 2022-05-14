@@ -1,81 +1,69 @@
 
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Insets;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 public class Calculadora {
 
     public static void main(String[] args) {
 
-        JFrame jframe = new JFrame();
-        jframe.setBackground(new Color(0, 56, 57));       
+        Color color1 = new Color(255, 255, 255);
+        Color color2 = new Color(85, 85, 85);
+        Color color3 = new Color(82, 183, 227);
+        Color color4 = new Color(146, 150, 153);
+        Color color5 = new Color(229, 97, 74);
+
+        JFrame jframe = new JFrame();               
         jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jframe.setLocationRelativeTo(null);
         jframe.setResizable(false);
         jframe.setSize(250, 250);
         jframe.setTitle("Calculadora");
+        jframe.getContentPane().setLayout(null);  // ver omitir
+        jframe.getContentPane().setBackground(color2);
 
-        // Define o Gerenciador de Layout como nulo, também chamado de AbsoluteLayout
-        jframe.getContentPane().setLayout(null);   
-        // Cria o visor
         JLabel lblVisor = new JLabel();
-        // Define posicionamento e dimensão usando a notação x, y, width, height
         lblVisor.setBounds(10, 10, 230, 50);
-        // Define que será um elemento opaco (não transparente)
         lblVisor.setOpaque(true);
-        // Define a cor de fundo usando a notação sRGB (range (0-255))
-        lblVisor.setBackground(new Color(174, 198, 150));   
-        
-        
-
-
-        /*
-        JButton btn0 = new JButton("0");
-        JButton btn1 = new JButton("1");
-        JButton btn2 = new JButton("2");
-        JButton btn3 = new JButton("3");
-        JButton btn4 = new JButton("4");
-        JButton btn5 = new JButton("5");
-        JButton btn6 = new JButton("6");
+        lblVisor.setBackground(color3);
+        lblVisor.setForeground(color1);
+                
         JButton btn7 = new JButton("7");
+        btn7.setBounds(10, 70, 50, 50);
         JButton btn8 = new JButton("8");
+        btn8.setBounds(70, 70, 50, 50);
         JButton btn9 = new JButton("9");
-        JButton btnPonto = new JButton(".");
-        JButton btnIgualdade = new JButton("=");
-        JButton btnSoma = new JButton("+");
-        JButton btnSubtracao = new JButton("-");
-        JButton btnMultiplicacao = new JButton("x");
+        btn9.setBounds(130, 70, 50, 50);
         JButton btnDivisao = new JButton("÷"); 
-        
-        
-
-
-        
-        btn1.setPreferredSize(new Dimension(50,50));
-        btn2.setPreferredSize(new Dimension(50,50));
-        btn3.setPreferredSize(new Dimension(50,50));
-        btn4.setPreferredSize(new Dimension(50,50));
-        btn5.setPreferredSize(new Dimension(50,50));
-        btn6.setPreferredSize(new Dimension(50,50));
-        btn7.setPreferredSize(new Dimension(50,50));
-        btn8.setPreferredSize(new Dimension(50,50));
-        btn9.setPreferredSize(new Dimension(50,50));
-        btnPonto.setPreferredSize(new Dimension(50,50));
-        btnIgualdade.setPreferredSize(new Dimension(50,50));
-        btnSoma.setPreferredSize(new Dimension(50,50));
-        btnSubtracao.setPreferredSize(new Dimension(50,50));
-        btnMultiplicacao.setPreferredSize(new Dimension(50,50));
-        btnDivisao.setPreferredSize(new Dimension(50,50));
-        
-        */
+        btnDivisao.setBounds(190, 70, 50, 50);
+        JButton btn4 = new JButton("4");
+        btn4.setBounds(10, 130, 50, 50);
+        JButton btn5 = new JButton("5");
+        btn5.setBounds(70, 130, 50, 50);
+        JButton btn6 = new JButton("6");
+        btn6.setBounds(130, 130, 50, 50);
+        JButton btnMultiplicacao = new JButton("x");
+        btnMultiplicacao.setBounds(190, Y, 50, 50);
+        JButton btn1 = new JButton("1");
+        btn1.setBounds(10, 130, 50, 50);
+        JButton btn2 = new JButton("2");
+        btn2.setBounds(70, 190, 50, 50);
+        JButton btn3 = new JButton("3");
+        btn3.setBounds(130, 190, 50, 50);
+        JButton btnSubtracao = new JButton("-");
+        btnSubtracao.setBounds(190, 190, 50, 50);
+        JButton btn0 = new JButton("0");
+        btn0.setBounds(10, 250, 50, 50);
+        JButton btnPonto = new JButton(".");
+        btnPonto.setBounds(70, 250, 50, 50);
+        JButton btnIgualdade = new JButton("=");
+        btnIgualdade.setBounds(130, 250, 50, 50);
+        JButton btnSoma = new JButton("+");
+        btnSoma.setBounds(190, 250, 50, 50);
 
         jframe.getContentPane().add(lblVisor);         
-        /*jframe.getContentPane().add(btn7);
+        jframe.getContentPane().add(btn7);
         jframe.getContentPane().add(btn8);
         jframe.getContentPane().add(btn9);
         jframe.getContentPane().add(btnDivisao);
@@ -90,12 +78,9 @@ public class Calculadora {
         jframe.getContentPane().add(btn0);
         jframe.getContentPane().add(btnPonto);
         jframe.getContentPane().add(btnIgualdade);
-        jframe.getContentPane().add(btnSoma);*/
+        jframe.getContentPane().add(btnSoma);
+
         jframe.setVisible(true);
-
-        
-
-        
 
     }
 
