@@ -12,7 +12,8 @@ public class Calculadora {
 
     public static void main(String[] args) {
 
-        JFrame jframe = new JFrame();        
+        JFrame jframe = new JFrame();
+        jframe.setBackground(new Color(0, 56, 57));       
         jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jframe.setLocationRelativeTo(null);
         jframe.setResizable(false);
