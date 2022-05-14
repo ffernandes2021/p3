@@ -17,11 +17,15 @@ public class Calculadora {
         jframe.setResizable(false);
         jframe.setSize(250, 250);
         jframe.setTitle("Calculadora");
+        jframe.setOpacity(true);
+
         jframe.getContentPane().setLayout(null);   
 
         JLabel lblVisor = new JLabel();
         // Define posicionamento e dimensão usando a notação x, y, width, height
         lblVisor.setBounds(10, 10, 230, 50);
+        // Define que será um elemento opaco 
+        // lblVisor.setOpaque(true);
         // Define a cor de fundo usando a notação sRGB (range (0-255))
         lblVisor.setBackground(new Color(255, 0, 0));    
         /*
