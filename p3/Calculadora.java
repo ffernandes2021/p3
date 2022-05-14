@@ -1,6 +1,7 @@
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Insets;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -37,6 +38,7 @@ public class Calculadora {
         JButton btnDivisao = new JButton("÷"); 
         
         btn0.setPreferredSize(new Dimension(50,50));
+        btn0.setMargin(new Insets(10,10,10,10));
         btn1.setPreferredSize(new Dimension(50,50));
         btn2.setPreferredSize(new Dimension(50,50));
         btn3.setPreferredSize(new Dimension(50,50));
