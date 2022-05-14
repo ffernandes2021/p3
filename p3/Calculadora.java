@@ -19,7 +19,7 @@ public class Calculadora {
         jframe.getContentPane().setLayout(null);   
 
         JLabel lblVisor = new JLabel();
-        lblVisor.setBounds(10, 10, 230, 50);    
+        lblVisor.setBounds(10, 10, 230, 50); // x, y, width, height   
         /*
         JButton btn0 = new JButton("0");
         JButton btn1 = new JButton("1");
