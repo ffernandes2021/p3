@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Insets;
@@ -19,7 +20,8 @@ public class Calculadora {
         jframe.getContentPane().setLayout(null);   
 
         JLabel lblVisor = new JLabel();
-        lblVisor.setBounds(10, 10, 230, 50); // x, y, width, height   
+        lblVisor.setBounds(10, 10, 230, 50); // x, y, width, height
+        lblVisor.setBackground(new Color(255, 0, 0)); // r, g, b   
         /*
         JButton btn0 = new JButton("0");
         JButton btn1 = new JButton("1");
