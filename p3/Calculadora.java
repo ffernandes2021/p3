@@ -1,5 +1,6 @@
 
 import java.awt.Color;
+import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -9,7 +10,7 @@ public class Calculadora {
     public static void main(String[] args) {
 
         Color color1 = new Color(255, 255, 255);
-        Color color2 = new Color(85, 85, 85);
+        Color color2 = new Color(36, 41, 47);
         Color color3 = new Color(82, 183, 227);
         Color color4 = new Color(146, 150, 153);
         Color color5 = new Color(229, 97, 74);
@@ -18,14 +19,10 @@ public class Calculadora {
         jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jframe.setLocationRelativeTo(null);
         jframe.setResizable(false);
-        jframe.setSize(250, 310);
+        jframe.setSize(250, 345);
         jframe.setTitle("Calculadora");
-
-
-        jframe.setUndecorated(true);
-
         jframe.getContentPane().setLayout(null);
-        jframe.getContentPane().setBackground(color2);
+        jframe.getContentPane().setBackground(color2);  
 
         JLabel lblVisor = new JLabel();
         lblVisor.setBounds(10, 10, 230, 50);
@@ -37,6 +34,8 @@ public class Calculadora {
         btn7.setBounds(10, 70, 50, 50);
         btn7.setBackground(color4);
         btn7.setForeground(color1);
+        btn7.setFont(new java.awt.Font("Comic Sans MS", 1, 24));
+        
         
         JButton btn8 = new JButton("8");
         btn8.setBounds(70, 70, 50, 50);
