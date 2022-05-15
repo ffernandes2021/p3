@@ -20,7 +20,7 @@ public class Calculadora {
         jframe.setResizable(false);
         jframe.setSize(250, 350);
         jframe.setTitle("Calculadora");
-        jframe.getContentPane().setLayout(null);  // ver omitir
+        // jframe.getContentPane().setLayout(null);  // ver omitir
         jframe.getContentPane().setBackground(color2);
 
         JLabel lblVisor = new JLabel();
