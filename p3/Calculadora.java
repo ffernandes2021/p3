@@ -15,7 +15,7 @@ public class Calculadora {
         Color color4 = new Color(146, 150, 153);
         Color color5 = new Color(229, 97, 74);
 
-        Font font1 = new Font("Helvetica", Font.BOLD, 22);
+        Font font1 = new Font("Helvetica", Font.BOLD, 30);
 
         JFrame jframe = new JFrame();
         jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
