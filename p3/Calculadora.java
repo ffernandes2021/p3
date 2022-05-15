@@ -18,9 +18,13 @@ public class Calculadora {
         jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jframe.setLocationRelativeTo(null);
         jframe.setResizable(false);
-        jframe.setSize(250, 350);
+        jframe.setSize(250, 310);
         jframe.setTitle("Calculadora");
-        // jframe.getContentPane().setLayout(null);  // ver omitir
+
+
+        jframe.setUndecorated(true);
+
+        jframe.getContentPane().setLayout(null);
         jframe.getContentPane().setBackground(color2);
 
         JLabel lblVisor = new JLabel();
