@@ -1,9 +1,14 @@
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.plaf.basic.BasicButtonUI;
+import javax.swing.plaf.metal.MetalButtonUI;
 
 public class Calculadora {
 
@@ -14,6 +19,9 @@ public class Calculadora {
         Color color3 = new Color(82, 183, 227);
         Color color4 = new Color(146, 150, 153);
         Color color5 = new Color(229, 97, 74);
+        Color color6 = new Color(116, 120, 124);
+        Color color7 = new Color(34, 159, 213);
+        Color color8 = new Color(212, 57, 30);
 
         Font font1 = new Font("Helvetica", Font.BOLD, 30);
 
@@ -24,22 +32,45 @@ public class Calculadora {
         jframe.setSize(250, 345);
         jframe.setTitle("Calculadora");
         jframe.getContentPane().setLayout(null);
-        jframe.getContentPane().setBackground(color2);  
+        jframe.getContentPane().setBackground(color2);
 
         JLabel jlabelVisor = new JLabel();
         jlabelVisor.setBounds(10, 10, 230, 50);
         jlabelVisor.setOpaque(true);
         jlabelVisor.setBackground(color3);
         jlabelVisor.setForeground(color1);
-                
+
         JButton jbutton7 = new JButton("7");
         jbutton7.setBounds(10, 70, 50, 50);
         jbutton7.setBackground(color4);
         jbutton7.setForeground(color1);
         jbutton7.setFont(font1);
+        jbutton7.setUI(new BasicButtonUI());
         jbutton7.setFocusPainted(false);
-        jbutton7.setBorder(null);        
-        
+        jbutton7.setBorder(null);
+
+        jbutton7.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent me) {                
+            }
+            @Override
+            public void mousePressed(MouseEvent me) {
+                jbutton7.setBackground(color6);
+            }
+            @Override
+            public void mouseReleased(MouseEvent me) {
+                jbutton7.setBackground(color4);
+            }
+            @Override
+            public void mouseEntered(MouseEvent me) {
+                jbutton7.setBackground(color6);
+            }
+            @Override
+            public void mouseExited(MouseEvent me) {
+                jbutton7.setBackground(color4);
+            }
+        });
+
         JButton jbutton8 = new JButton("8");
         jbutton8.setBounds(70, 70, 50, 50);
         jbutton8.setBackground(color4);
@@ -56,7 +87,7 @@ public class Calculadora {
         jbutton9.setFocusPainted(false);
         jbutton9.setBorder(null);
 
-        JButton jbuttonDivisao = new JButton("÷"); 
+        JButton jbuttonDivisao = new JButton("÷");
         jbuttonDivisao.setBounds(190, 70, 50, 50);
         jbuttonDivisao.setBackground(color3);
         jbuttonDivisao.setForeground(color1);
@@ -160,7 +191,7 @@ public class Calculadora {
         jbuttonSoma.setFocusPainted(false);
         jbuttonSoma.setBorder(null);
 
-        jframe.getContentPane().add(jlabelVisor);         
+        jframe.getContentPane().add(jlabelVisor);
         jframe.getContentPane().add(jbutton7);
         jframe.getContentPane().add(jbutton8);
         jframe.getContentPane().add(jbutton9);
