@@ -5,6 +5,11 @@ import java.awt.Font;
 import java.awt.LayoutManager;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -24,8 +29,9 @@ public class Calculadora implements MouseListener {
     JLabel lblVisor;
     Component component;
     String componentName;
+    String expression = "";
 
-    public void createComponents() {
+    public void createGUI() {
         Color color1 = new Color(255, 255, 255);
         Color color2 = new Color(36, 41, 47);
         color3 = new Color(146, 150, 153);
@@ -201,59 +207,68 @@ public class Calculadora implements MouseListener {
         componentName = e.getComponent().getName();
         switch (componentName) {
             case "btn7":
-                lblVisor.setText("7");
+                expression = expression.concat("7");
                 break;
             case "btn8":
-                lblVisor.setText("8");
+                expression = expression.concat("8");
                 break;
             case "btn9":
-                lblVisor.setText("9");
+                expression = expression.concat("9");
                 break;
             case "btn4":
-                lblVisor.setText("4");
+                expression = expression.concat("4");
                 break;
             case "btn5":
-                lblVisor.setText("5");
+                expression = expression.concat("5");
                 break;
             case "btn6":
-                lblVisor.setText("6");
+                expression = expression.concat("6");
                 break;
             case "btn1":
-                lblVisor.setText("1");
+                expression = expression.concat("1");
                 break;
             case "btn2":
-                lblVisor.setText("2");
+                expression = expression.concat("2");
                 break;
             case "btn3":
-                lblVisor.setText("3");
+                expression = expression.concat("3");
                 break;
             case "btn0":
-                lblVisor.setText("0");
+                expression = expression.concat("0");
                 break;
             case "btnPonto":
-                lblVisor.setText(".");
+                expression = expression.concat(".");
                 break;
             case "btnDiv":
-                lblVisor.setText("÷");
+                expression = expression.concat("÷");
                 break;
             case "btnMult":
-                lblVisor.setText("×");
+                expression = expression.concat("×");
                 break;
             case "btnSub":
-                lblVisor.setText("−");
+                expression = expression.concat("-");
                 break;
             case "btnSoma":
-                lblVisor.setText("+");
+                expression = expression.concat("+");
                 break;
-            case "btnIgual":
-                lblVisor.setText("=");
+            case "btnIgual":                
+                ScriptEngineManager scriptEngineManager = new ScriptEngineManager();
+                ScriptEngine scriptEngine = scriptEngineManager.getEngineByName("Nashorn");
+                Double res;
+                try {
+                    res = (Double) scriptEngine.eval(expression.replace("×", "*").replace("÷", "/"));
+                    expression = res.toString();
+                } catch (ScriptException ex) {
+                    expression = "ERROR";
+                }
                 break;
         }
-    }
+        lblVisor.setText(expression);
+    }    
 
     public static void main(String[] args) {
         Calculadora calculadora = new Calculadora();
-        calculadora.createComponents();
+        calculadora.createGUI();
     }
 
 }
