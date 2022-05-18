@@ -253,7 +253,7 @@ public class Calculadora implements MouseListener {
                 break;
             case "btnIgual":                
                 ScriptEngineManager scriptEngineManager = new ScriptEngineManager();
-                ScriptEngine scriptEngine = scriptEngineManager.getEngineByName("Nashorn");
+                ScriptEngine scriptEngine = scriptEngineManager.getEngineByName("graal.js");
                 Double res;
                 try {
                     res = (Double) scriptEngine.eval(expression.replace("×", "*").replace("÷", "/"));
