@@ -5,8 +5,6 @@ import java.awt.Font;
 import java.awt.LayoutManager;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
@@ -17,6 +15,8 @@ import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import javax.swing.plaf.ButtonUI;
 import javax.swing.plaf.basic.BasicButtonUI;
+import net.objecthunter.exp4j.Expression;
+import net.objecthunter.exp4j.ExpressionBuilder;
 
 public class Calculadora implements MouseListener {
 
@@ -203,7 +203,6 @@ public class Calculadora implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        component = e.getComponent();
         componentName = e.getComponent().getName();
         switch (componentName) {
             case "btn7":
@@ -251,20 +250,14 @@ public class Calculadora implements MouseListener {
             case "btnSoma":
                 expression = expression.concat("+");
                 break;
-            case "btnIgual":                
-                ScriptEngineManager scriptEngineManager = new ScriptEngineManager();
-                ScriptEngine scriptEngine = scriptEngineManager.getEngineByName("graal.js");
-                Double res;
-                try {
-                    res = (Double) scriptEngine.eval(expression.replace("×", "*").replace("÷", "/"));
-                    expression = res.toString();
-                } catch (ScriptException ex) {
-                    expression = "ERROR";
-                }
+            case "btnIgual":
+                Expression ex = new ExpressionBuilder("3*3").build();
+                double result = ex.evaluate();
+                expression = (String) result;
                 break;
         }
         lblVisor.setText(expression);
-    }    
+    }
 
     public static void main(String[] args) {
         Calculadora calculadora = new Calculadora();
