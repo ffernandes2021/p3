@@ -5,9 +5,6 @@ import java.awt.Font;
 import java.awt.LayoutManager;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -15,7 +12,6 @@ import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import javax.swing.plaf.ButtonUI;
 import javax.swing.plaf.basic.BasicButtonUI;
-import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
 
 public class Calculadora implements MouseListener {
@@ -236,27 +232,58 @@ public class Calculadora implements MouseListener {
                 expression = expression.concat("0");
                 break;
             case "btnPonto":
-                expression = expression.concat(".");
+                expression = getClearExpression(expression, ".");
                 break;
             case "btnDiv":
-                expression = expression.concat("÷");
+                expression = getClearExpression(expression, "÷");
                 break;
             case "btnMult":
-                expression = expression.concat("×");
+                expression = getClearExpression(expression, "×");
                 break;
             case "btnSub":
-                expression = expression.concat("-");
+                expression = getClearExpression(expression, "-");
                 break;
             case "btnSoma":
-                expression = expression.concat("+");
+                expression = getClearExpression(expression, "+");
                 break;
             case "btnIgual":
-                Expression ex = new ExpressionBuilder("3*3").build();
-                double result = ex.evaluate();
-                expression = (String) result;
+                expression = getResultExpression(expression);
                 break;
         }
         lblVisor.setText(expression);
+    }
+
+    public String getClearExpression(String exp, String car) {
+        String ultCar = exp.substring(exp.length() - 1);
+        if (car.equals(".")) {
+            String[] expPart = exp.split("[÷|×|\\-|+]");
+            if ((ultCar.matches("[÷|×|\\-|+]")) || (!expPart[expPart.length - 1].contains(car))) {
+                exp = exp.concat(car);
+            }
+        } else {
+            if (ultCar.matches("[÷|×|\\-|+]")) {
+                exp = exp.substring(0, exp.length() - 1).concat(car);
+            } else {
+                exp = exp.concat(car);
+            }
+        }
+        return exp;
+    }
+
+    public String getResultExpression(String exp) {
+        try {
+            Double result = new ExpressionBuilder(exp.replace("÷", "/").replace("×", "*")).build().evaluate();
+            exp = result.toString();
+            int posicaoPonto = exp.indexOf(".");
+            String parteInteira = exp.substring(0, posicaoPonto);
+            String parteReal = exp.substring(posicaoPonto + 1, exp.length());
+            if (parteReal.equals("0")) {
+                exp = parteInteira;
+            }
+        } catch (Exception exception) {
+            exp = "ERROR";
+        }
+        return exp;
     }
 
     public static void main(String[] args) {
